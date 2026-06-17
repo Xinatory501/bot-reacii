@@ -1,0 +1,10 @@
+services:
+  telegram-bot:
+    build: .
+    container_name: telegram-reaction-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./sessions:/app/sessions
+      - ./bot.sqlite3:/app/bot.sqlite3
